@@ -1,0 +1,14 @@
+{
+  "id": "MiguelGuedelha.Umbraco.RedirectsManager",
+  "name": "MiguelGuedelha.Umbraco.RedirectsManager",
+  "version": "0.0.0",
+  "allowTelemetry": true,
+  "extensions": [
+    {
+      "name": "Miguel Guedelha Umbraco Redirects Manager Bundle",
+      "alias": "MiguelGuedelha.Umbraco.RedirectsManager.Bundle",
+      "type": "bundle",
+      "js": "/App_Plugins/MiguelGuedelhaUmbracoRedirectsManager/miguel-guedelha-umbraco-redirects-manager.js"
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="MiguelGuedelha.Umbraco.RedirectsManager.TestSite/MiguelGuedelha.Umbraco.RedirectsManager.TestSite.csproj" />
+  <Project Path="MiguelGuedelha.Umbraco.RedirectsManager/MiguelGuedelha.Umbraco.RedirectsManager.csproj" />
+</Solution>
