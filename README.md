@@ -1,0 +1,1 @@
+# MiguelGuedelha.Umbraco.RedirectsManager
