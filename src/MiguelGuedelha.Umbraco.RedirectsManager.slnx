@@ -1,4 +1,12 @@
 <Solution>
-  <Project Path="MiguelGuedelha.Umbraco.RedirectsManager.TestSite/MiguelGuedelha.Umbraco.RedirectsManager.TestSite.csproj" />
-  <Project Path="MiguelGuedelha.Umbraco.RedirectsManager/MiguelGuedelha.Umbraco.RedirectsManager.csproj" />
+  <Folder Name="/001 Global Configuration/" />
+  <Folder Name="/002 Aspire/">
+    <Project Path="MiguelGuedelha.Umbraco.RedirectsManager.AppHost/MiguelGuedelha.Umbraco.RedirectsManager.AppHost.csproj" />
+  </Folder>
+  <Folder Name="/003 src/">
+    <Project Path="MiguelGuedelha.Umbraco.RedirectsManager/MiguelGuedelha.Umbraco.RedirectsManager.csproj" />
+  </Folder>
+  <Folder Name="/004 test/">
+    <Project Path="MiguelGuedelha.Umbraco.RedirectsManager.TestSite/MiguelGuedelha.Umbraco.RedirectsManager.TestSite.csproj" />
+  </Folder>
 </Solution>
