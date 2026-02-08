@@ -42,4 +42,9 @@ internal static class Constants
             public const string Delivery = "Delivery";
         }
     }
+
+    internal static class Persistence
+    {
+        public const string TableName = "RedirectsManager";
+    }
 }
