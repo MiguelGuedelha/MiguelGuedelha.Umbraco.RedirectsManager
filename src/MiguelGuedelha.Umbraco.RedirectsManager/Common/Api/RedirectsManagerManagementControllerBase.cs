@@ -10,4 +10,5 @@ namespace MiguelGuedelha.Umbraco.RedirectsManager.Common.Api;
 [BackOfficeRoute($"{Constants.Api.ApiName}/api/v{{version:apiVersion}}")]
 [Authorize(Policy = AuthorizationPolicies.SectionAccessContent)]
 [MapToApi(Constants.Api.ApiName)]
+[ApiExplorerSettings(GroupName = Constants.Api.Groups.Management)]
 public abstract class RedirectsManagerManagementControllerBase : ControllerBase;
