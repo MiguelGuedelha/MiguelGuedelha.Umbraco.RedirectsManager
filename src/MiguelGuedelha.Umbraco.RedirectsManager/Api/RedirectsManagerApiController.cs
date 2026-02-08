@@ -6,9 +6,9 @@ using Umbraco.Cms.Core.Security;
 
 namespace MiguelGuedelha.Umbraco.RedirectsManager.Api;
 
-[ApiVersion(RedirectsManagerApiConstants.Versions.V1)]
-[ApiExplorerSettings(GroupName = RedirectsManagerApiConstants.GroupName)]
-public class RedirectsManagerApiController : RedirectsManagerApiControllerBase
+[ApiVersion(Constants.Api.Versions.V1)]
+[ApiExplorerSettings(GroupName = Constants.Api.GroupName)]
+public sealed class RedirectsManagerApiController : RedirectsManagerApiControllerBase
 {
     private readonly IBackOfficeSecurityAccessor _backOfficeSecurityAccessor;
 

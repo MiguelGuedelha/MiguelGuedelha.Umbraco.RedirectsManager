@@ -3,7 +3,7 @@ using Umbraco.Cms.Infrastructure.Manifest;
 
 namespace MiguelGuedelha.Umbraco.RedirectsManager.Manifests;
 
-public class RedirectsManagerPackageManifestReader : IPackageManifestReader
+internal sealed class RedirectsManagerPackageManifestReader : IPackageManifestReader
 {
     public Task<IEnumerable<PackageManifest>> ReadPackageManifestsAsync()
     {
@@ -12,17 +12,17 @@ public class RedirectsManagerPackageManifestReader : IPackageManifestReader
             new
             {
                 type = "bundle",
-                alias = $"{RedirectsManagerPackageManifestConstants.Prefix}.Bundle",
-                name = $"{RedirectsManagerPackageManifestConstants.PrefixName} Bundle",
-                js = $"/App_Plugins/{RedirectsManagerPackageManifestConstants.BundleFolder}/{RedirectsManagerPackageManifestConstants.BundleName}.js"
+                alias = $"{Constants.Manifest.Prefix}.Bundle",
+                name = $"{Constants.Manifest.PrefixName} Bundle",
+                js = $"{Constants.Manifest.BundleFolder}/{Constants.Manifest.BundleName}.js"
             }
         };
         
         var manifest = new PackageManifest
         {
-            Id = RedirectsManagerPackageManifestConstants.Id,
-            Name = RedirectsManagerPackageManifestConstants.Name,
-            Version = RedirectsManagerPackageManifestConstants.Version,
+            Id = Constants.Manifest.Id,
+            Name = Constants.Manifest.Name,
+            Version = Constants.Manifest.Version,
             AllowTelemetry = true,
             Extensions = extensions.ToArray()
         };
