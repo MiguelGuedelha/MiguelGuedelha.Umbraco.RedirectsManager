@@ -13,5 +13,11 @@ public sealed class RedirectsManagerComposer : IComposer
     {
         builder.AddRedirectsManagerOpenApi();
         builder.Services.AddSingleton<IPackageManifestReader, PackageManifestReader>();
+
+        builder.Services.AddControllers(options =>
+        {
+            var config = builder.Config;
+            options.Conventions.Add(new RedirectsManagerDeliveryVisibilityConvention(config));
+        });
     }
 }
