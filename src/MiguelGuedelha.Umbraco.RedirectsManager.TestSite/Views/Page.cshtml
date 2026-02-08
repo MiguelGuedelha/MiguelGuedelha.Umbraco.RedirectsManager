@@ -1,0 +1,12 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.Page>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
+@{
+	Layout = "master.cshtml";
+}
+
+<h1>Node Name: @Model.Name</h1>
+
+<p>Test: @Model.TestField</p>
+
+<p>Url: @Model.Url(mode: UrlMode.Absolute)</p>

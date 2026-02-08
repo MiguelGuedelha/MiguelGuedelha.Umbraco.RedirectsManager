@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms" Version="17.1.0" />
     <PackageReference Include="Umbraco.Cms.DevelopmentMode.Backoffice" Version="17.1.0" />
+    <PackageReference Include="uSync" Version="17.0.2" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,6 +20,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\MiguelGuedelha.Umbraco.RedirectsManager\MiguelGuedelha.Umbraco.RedirectsManager.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="uSync\v17\ContentTypes\" />
+    <Folder Include="uSync\v17\Media\" />
+    <Folder Include="uSync\v17\Templates\" />
   </ItemGroup>
 
   <PropertyGroup>
