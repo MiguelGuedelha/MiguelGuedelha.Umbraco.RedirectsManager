@@ -2,7 +2,7 @@ var builder = DistributedApplication.CreateBuilder(args);
 
 var dashboardClient = builder.AddJavaScriptApp(
         name: "dashboard-watch", 
-        appDirectory: "../MiguelGuedelha.Umbraco.RedirectsManager/Client", 
+        appDirectory: "../MiguelGuedelha.Umbraco.RedirectsManager.Client", 
         runScriptName: "watch")
     .WithPnpm(install: false);
 

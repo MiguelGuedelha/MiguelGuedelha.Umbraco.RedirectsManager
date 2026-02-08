@@ -5,6 +5,7 @@
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
+      "launchUrl": "https://miguelguedelha_umbraco_redirectsmanager_apphost.dev.localhost:17066",
       "applicationUrl": "https://miguelguedelha_umbraco_redirectsmanager_apphost.dev.localhost:17066;http://miguelguedelha_umbraco_redirectsmanager_apphost.dev.localhost:15169",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",

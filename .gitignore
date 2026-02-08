@@ -484,3 +484,4 @@ $RECYCLE.BIN/
 
 # Project related
 src/MiguelGuedelha.Umbraco.RedirectsManager/wwwroot/App_Plugins/MiguelGuedelhaUmbracoRedirectsManager
+obj\\Debug/

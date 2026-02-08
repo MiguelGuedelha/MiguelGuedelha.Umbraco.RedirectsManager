@@ -7,7 +7,7 @@ export default defineConfig({
       formats: ["es"],
       fileName: "miguel-guedelha-umbraco-redirects-manager",
     },
-    outDir: "../wwwroot/App_Plugins/MiguelGuedelhaUmbracoRedirectsManager", // your web component will be saved in this location
+    outDir: "../MiguelGuedelha.Umbraco.RedirectsManager/wwwroot/App_Plugins/MiguelGuedelhaUmbracoRedirectsManager", // your web component will be saved in this location
     emptyOutDir: true,
     sourcemap: true,
     rollupOptions: {
