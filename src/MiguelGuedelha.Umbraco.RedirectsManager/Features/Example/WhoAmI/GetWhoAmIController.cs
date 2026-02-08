@@ -10,7 +10,7 @@ namespace MiguelGuedelha.Umbraco.RedirectsManager.Features.Example.WhoAmI;
 
 [ApiVersion(Constants.Api.Versions.V1)]
 [ApiExplorerSettings(GroupName = Constants.Api.Groups.Example)]
-public sealed class GetWhoAmIController : RedirectsManagerControllerBase
+public sealed class GetWhoAmIController : RedirectsManagerManagementControllerBase
 {
     private readonly IBackOfficeSecurityAccessor _backOfficeSecurityAccessor;
 

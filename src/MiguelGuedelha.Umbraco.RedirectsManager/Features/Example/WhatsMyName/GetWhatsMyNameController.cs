@@ -9,7 +9,7 @@ namespace MiguelGuedelha.Umbraco.RedirectsManager.Features.Example.WhatsMyName;
 
 [ApiVersion(Constants.Api.Versions.V1)]
 [ApiExplorerSettings(GroupName = Constants.Api.Groups.Example)]
-public sealed class GetWhatsMyNameController : RedirectsManagerControllerBase
+public sealed class GetWhatsMyNameController : RedirectsManagerManagementControllerBase
 {
     private readonly IBackOfficeSecurityAccessor _backOfficeSecurityAccessor;
 

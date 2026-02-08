@@ -7,7 +7,7 @@ namespace MiguelGuedelha.Umbraco.RedirectsManager.Features.Example.WhatsTheTime;
 
 [ApiVersion(Constants.Api.Versions.V1)]
 [ApiExplorerSettings(GroupName = Constants.Api.Groups.Example)]
-public sealed class GetWhatsTheTimeController : RedirectsManagerControllerBase
+public sealed class GetWhatsTheTimeController : RedirectsManagerManagementControllerBase
 {
     [HttpGet("whatsTheTimeMrWolf")]
     [ProducesResponseType(typeof(DateTime), 200)]
