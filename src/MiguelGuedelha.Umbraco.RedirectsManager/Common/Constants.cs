@@ -38,7 +38,8 @@ internal static class Constants
         public static class Groups
         {
             public const string Example = "Example";
-            public const string RedirectsManager = "Redirects Manager";
+            public const string Management = "Management";
+            public const string Delivery = "Delivery";
         }
     }
 }
