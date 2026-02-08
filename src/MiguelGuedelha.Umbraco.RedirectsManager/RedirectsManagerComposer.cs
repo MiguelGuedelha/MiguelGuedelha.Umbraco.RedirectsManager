@@ -1,6 +1,6 @@
 using Microsoft.Extensions.DependencyInjection;
-using MiguelGuedelha.Umbraco.RedirectsManager.Api;
-using MiguelGuedelha.Umbraco.RedirectsManager.Manifests;
+using MiguelGuedelha.Umbraco.RedirectsManager.Common.Api;
+using MiguelGuedelha.Umbraco.RedirectsManager.Features.Manifests;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Infrastructure.Manifest;
@@ -11,8 +11,7 @@ public sealed class RedirectsManagerComposer : IComposer
 {
     public void Compose(IUmbracoBuilder builder)
     {
-        builder.Services
-            .AddApi()
-            .AddSingleton<IPackageManifestReader, RedirectsManagerPackageManifestReader>();
+        builder.AddRedirectsManagerOpenApi();
+        builder.Services.AddSingleton<IPackageManifestReader, PackageManifestReader>();
     }
 }

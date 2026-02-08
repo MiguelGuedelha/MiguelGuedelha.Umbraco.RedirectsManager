@@ -7,18 +7,19 @@ using Microsoft.OpenApi;
 using Swashbuckle.AspNetCore.SwaggerGen;
 using Umbraco.Cms.Api.Common.OpenApi;
 using Umbraco.Cms.Api.Management.OpenApi;
+using Umbraco.Cms.Core.DependencyInjection;
 
-namespace MiguelGuedelha.Umbraco.RedirectsManager.Api;
+namespace MiguelGuedelha.Umbraco.RedirectsManager.Common.Api;
 
-internal static class RedirectsManagerApiConfiguration
+internal static class ApiConfiguration
 {
-    extension(IServiceCollection services)
+    extension(IUmbracoBuilder builder)
     {
-        public IServiceCollection AddApi()
+        public IUmbracoBuilder AddRedirectsManagerOpenApi()
         {
-            services.AddSingleton<IOperationIdHandler, CustomOperationHandler>();
+            builder.Services.AddSingleton<IOperationIdHandler, CustomOperationHandler>();
 
-            services.Configure<SwaggerGenOptions>(opt =>
+            builder.Services.Configure<SwaggerGenOptions>(opt =>
             {
                 // Related documentation:
                 // https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-backoffice-api
@@ -46,10 +47,10 @@ internal static class RedirectsManagerApiConfiguration
                 opt.OperationFilter<RedirectsManagerOperationSecurityFilter>();
             });
 
-            return services;
+            return builder;
         }
     }
-
+    
     public class RedirectsManagerOperationSecurityFilter : BackOfficeSecurityRequirementsOperationFilterBase
     {
         protected override string ApiName => Constants.Api.ApiName;

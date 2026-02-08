@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace MiguelGuedelha.Umbraco.RedirectsManager;
+namespace MiguelGuedelha.Umbraco.RedirectsManager.Common;
 
 internal static class Constants
 {
@@ -28,7 +28,6 @@ internal static class Constants
     internal static class Api
     {
         public const string ApiName = "redirectsmanager";
-        public const string GroupName = "Redirects Manager";
         public const string DocTitle = "Redirects Manager Backoffice API";
 
         public const string ControllersNamespace = "MiguelGuedelha.Umbraco.RedirectsManager";
@@ -36,6 +35,12 @@ internal static class Constants
         public static class Versions
         {
             public const string V1 = "1.0";
+        }
+        
+        public static class Groups
+        {
+            public const string Example = "Example";
+            public const string RedirectsManager = "Redirects Manager";
         }
     }
 }

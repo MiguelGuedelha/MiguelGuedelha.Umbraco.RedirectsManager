@@ -1,9 +1,10 @@
+using MiguelGuedelha.Umbraco.RedirectsManager.Common;
 using Umbraco.Cms.Core.Manifest;
 using Umbraco.Cms.Infrastructure.Manifest;
 
-namespace MiguelGuedelha.Umbraco.RedirectsManager.Manifests;
+namespace MiguelGuedelha.Umbraco.RedirectsManager.Features.Manifests;
 
-internal sealed class RedirectsManagerPackageManifestReader : IPackageManifestReader
+internal sealed class PackageManifestReader : IPackageManifestReader
 {
     public Task<IEnumerable<PackageManifest>> ReadPackageManifestsAsync()
     {
