@@ -6,7 +6,7 @@ using MiguelGuedelha.Umbraco.RedirectsManager.Common.Api;
 using Umbraco.Cms.Core.Models.Membership;
 using Umbraco.Cms.Core.Security;
 
-namespace MiguelGuedelha.Umbraco.RedirectsManager.Features.WhoAmI;
+namespace MiguelGuedelha.Umbraco.RedirectsManager.Features.Example.WhoAmI;
 
 [ApiVersion(Constants.Api.Versions.V1)]
 [ApiExplorerSettings(GroupName = Constants.Api.Groups.Example)]

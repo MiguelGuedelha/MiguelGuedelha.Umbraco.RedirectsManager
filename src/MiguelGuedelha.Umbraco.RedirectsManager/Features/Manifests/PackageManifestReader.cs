@@ -13,9 +13,9 @@ internal sealed class PackageManifestReader : IPackageManifestReader
             new
             {
                 type = "bundle",
-                alias = $"{Constants.Manifest.Prefix}.Bundle",
-                name = $"{Constants.Manifest.PrefixName} Bundle",
-                js = $"{Constants.Manifest.BundleFolder}/{Constants.Manifest.BundleName}.js"
+                alias = $"{Constants.Manifest.Id}.Bundle",
+                name = $"{Constants.Manifest.Name} Bundle",
+                js = $"{Constants.Manifest.PackageFolder}/{Constants.Manifest.BundleName}.js"
             }
         };
         

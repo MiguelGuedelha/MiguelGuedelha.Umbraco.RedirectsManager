@@ -5,7 +5,7 @@ using MiguelGuedelha.Umbraco.RedirectsManager.Common;
 using MiguelGuedelha.Umbraco.RedirectsManager.Common.Api;
 using Umbraco.Cms.Core.Security;
 
-namespace MiguelGuedelha.Umbraco.RedirectsManager.Features.WhatsMyName;
+namespace MiguelGuedelha.Umbraco.RedirectsManager.Features.Example.WhatsMyName;
 
 [ApiVersion(Constants.Api.Versions.V1)]
 [ApiExplorerSettings(GroupName = Constants.Api.Groups.Example)]

@@ -6,12 +6,10 @@ internal static class Constants
 {
     internal static class Manifest
     {
-        public const string Prefix = "MiguelGuedelha.Umbraco.RedirectsManager";
-        public const string PrefixName = "MiguelGuedelha Umbraco RedirectsManager";
         public const string BundleName = "miguel-guedelha-umbraco-redirects-manager";
-        public const string BundleFolder = "/App_Plugins/MiguelGuedelhaUmbracoRedirectsManager";
+        public const string PackageFolder = "/App_Plugins/MiguelGuedelhaUmbracoRedirectsManager";
         public const string Id = "MiguelGuedelha.Umbraco.RedirectsManager";
-        public const string Name = "Miguel Guedelha - Umbraco Redirects Manager";
+        public const string Name = "Miguel Guedelha Umbraco Redirects Manager";
     
         private static readonly Assembly Assembly = typeof(Constants).Assembly;
     
