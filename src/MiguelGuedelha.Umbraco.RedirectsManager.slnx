@@ -1,5 +1,8 @@
 <Solution>
-  <Folder Name="/001 Global Configuration/" />
+  <Folder Name="/001 Global Configuration/">
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+  </Folder>
   <Folder Name="/002 Aspire/">
     <Project Path="MiguelGuedelha.Umbraco.RedirectsManager.AppHost/MiguelGuedelha.Umbraco.RedirectsManager.AppHost.csproj" />
   </Folder>

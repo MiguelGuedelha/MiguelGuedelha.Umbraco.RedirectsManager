@@ -1,17 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\MiguelGuedelha.Umbraco.RedirectsManager.Persistence.EFCore\MiguelGuedelha.Umbraco.RedirectsManager.Persistence.EFCore.csproj" />
+  </ItemGroup>
 
-    <PropertyGroup>
-        <TargetFramework>net10.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
-
-    <ItemGroup>
-      <ProjectReference Include="..\MiguelGuedelha.Umbraco.RedirectsManager.Persistence.EFCore\MiguelGuedelha.Umbraco.RedirectsManager.Persistence.EFCore.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.2" />
-    </ItemGroup>
-
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
+  </ItemGroup>
 </Project>

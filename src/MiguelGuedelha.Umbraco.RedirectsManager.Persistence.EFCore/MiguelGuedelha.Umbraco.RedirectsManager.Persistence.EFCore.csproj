@@ -1,16 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
-    <PropertyGroup>
-        <TargetFramework>net10.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
-
     <ItemGroup>
-      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.2" />
-      <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.2" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" />
     </ItemGroup>
-    
+
     <ItemGroup>
         <!-- 
             Want to make the internal stuff like DbContext still visible to our assemblies,
@@ -24,5 +17,4 @@
         <InternalsVisibleTo Include="MiguelGuedelha.Umbraco.RedirectsManager.Persistence.Sqlite" />
         <InternalsVisibleTo Include="MiguelGuedelha.Umbraco.RedirectsManager.Persistence.SqlServer" />
     </ItemGroup>
-
 </Project>

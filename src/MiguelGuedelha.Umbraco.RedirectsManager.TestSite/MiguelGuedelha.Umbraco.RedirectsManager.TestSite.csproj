@@ -1,35 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
     <CompressionEnabled>false</CompressionEnabled> <!-- Disable compression. E.g. for umbraco backoffice files. These files should be precompressed by node and not let dotnet handle it -->
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.2">
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Umbraco.Cms" Version="17.1.0" />
-    <PackageReference Include="Umbraco.Cms.DevelopmentMode.Backoffice" Version="17.1.0" />
-    <PackageReference Include="uSync" Version="17.0.2" />
+    <PackageReference Include="Umbraco.Cms" />
+    <PackageReference Include="Umbraco.Cms.DevelopmentMode.Backoffice" />
+    <PackageReference Include="uSync" />
   </ItemGroup>
 
   <ItemGroup>
     <!-- Opt-in to app-local ICU to ensure consistent globalization APIs across different platforms -->
-    <PackageReference Include="Microsoft.ICU.ICU4C.Runtime" Version="72.1.0.3" />
+    <PackageReference Include="Microsoft.ICU.ICU4C.Runtime" />
     <RuntimeHostConfigurationOption Include="System.Globalization.AppLocalIcu" Value="72.1.0.3" Condition="$(RuntimeIdentifier.StartsWith('linux')) or $(RuntimeIdentifier.StartsWith('win')) or ('$(RuntimeIdentifier)' == '' and !$([MSBuild]::IsOSPlatform('osx')))" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\MiguelGuedelha.Umbraco.RedirectsManager\MiguelGuedelha.Umbraco.RedirectsManager.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="uSync\v17\ContentTypes\" />
-    <Folder Include="uSync\v17\Media\" />
-    <Folder Include="uSync\v17\Templates\" />
   </ItemGroup>
 
   <PropertyGroup>
@@ -42,5 +33,4 @@
     <RazorCompileOnBuild>false</RazorCompileOnBuild>
     <RazorCompileOnPublish>false</RazorCompileOnPublish>
   </PropertyGroup>
-
 </Project>
