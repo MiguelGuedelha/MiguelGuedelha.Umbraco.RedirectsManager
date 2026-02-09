@@ -14,10 +14,6 @@
 
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.2" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.2" />
     <PackageReference Include="Umbraco.Cms.Persistence.EFCore" Version="17.1.0" />
     <PackageReference Include="Umbraco.Cms.Web.Website" Version="*" />
     <PackageReference Include="Umbraco.Cms.Web.Common" Version="*" />
@@ -26,9 +22,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Common\Persistence\Migrations\Sqlite\" />
-    <Folder Include="Common\Persistence\Migrations\SqlServer\" />
     <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MiguelGuedelha.Umbraco.RedirectsManager.Persistence.Sqlite\MiguelGuedelha.Umbraco.RedirectsManager.Persistence.Sqlite.csproj" />
+    <ProjectReference Include="..\MiguelGuedelha.Umbraco.RedirectsManager.Persistence.SqlServer\MiguelGuedelha.Umbraco.RedirectsManager.Persistence.SqlServer.csproj" />
   </ItemGroup>
 
 </Project>

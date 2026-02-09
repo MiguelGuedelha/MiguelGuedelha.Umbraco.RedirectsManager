@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using MiguelGuedelha.Umbraco.RedirectsManager.Persistence.EFCore;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 
@@ -20,7 +21,8 @@ internal sealed class MigrationRunner : INotificationAsyncHandler<UmbracoApplica
 
         if (pendingMigrations.Any())
         {
-            await _redirectsDbContext.Database.MigrateAsync(cancellationToken: cancellationToken);
+            await _redirectsDbContext.Database
+                .MigrateAsync(cancellationToken: cancellationToken);
         }
     }
 }

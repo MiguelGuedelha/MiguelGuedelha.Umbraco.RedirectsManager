@@ -11,4 +11,4 @@ namespace MiguelGuedelha.Umbraco.RedirectsManager.Common.Api;
 [Authorize(Policy = AuthorizationPolicies.SectionAccessContent)]
 [MapToApi(Constants.Api.ApiName)]
 [ApiExplorerSettings(GroupName = Constants.Api.Groups.Management)]
-public abstract class RedirectsManagerManagementControllerBase : ControllerBase;
+public abstract class ManagementControllerBase : ControllerBase;

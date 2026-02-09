@@ -7,7 +7,7 @@ using MiguelGuedelha.Umbraco.RedirectsManager.Common.Api;
 namespace MiguelGuedelha.Umbraco.RedirectsManager.Features.Delivery;
 
 [ApiVersion(Constants.Api.Versions.V1)]
-public sealed class GetTestDeliveryController : RedirectsManagerDeliveryControllerBase
+public sealed class GetTestDeliveryController : DeliveryControllerBase
 {
     [HttpGet("test")]
     [ProducesResponseType<string>(StatusCodes.Status200OK)]

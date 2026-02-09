@@ -8,7 +8,7 @@ namespace MiguelGuedelha.Umbraco.RedirectsManager.Features.Example.Ping;
 
 [ApiVersion(Constants.Api.Versions.V1)]
 [ApiExplorerSettings(GroupName = Constants.Api.Groups.Example)]
-public sealed class GetPingController : RedirectsManagerManagementControllerBase
+public sealed class GetPingController : ManagementControllerBase
 {
     [HttpGet("ping")]
     [ProducesResponseType<string>(StatusCodes.Status200OK)]

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/launchsettings.json",
   "profiles": {
-    "https": {
+    "https - SQL Server": {
       "commandName": "Project",
       "dotnetRunMessages": true,
       "launchBrowser": true,
@@ -12,7 +12,38 @@
         "DOTNET_ENVIRONMENT": "Development",
         "ASPIRE_DASHBOARD_OTLP_ENDPOINT_URL": "https://localhost:21010",
         "ASPIRE_DASHBOARD_MCP_ENDPOINT_URL": "https://localhost:23175",
-        "ASPIRE_RESOURCE_SERVICE_ENDPOINT_URL": "https://localhost:22144"
+        "ASPIRE_RESOURCE_SERVICE_ENDPOINT_URL": "https://localhost:22144",
+        "USE_SQL_SERVER": "true"
+      }
+    },
+    "https - SQLite": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "https://miguelguedelha_umbraco_redirectsmanager_apphost.dev.localhost:17066",
+      "applicationUrl": "https://miguelguedelha_umbraco_redirectsmanager_apphost.dev.localhost:17066;http://miguelguedelha_umbraco_redirectsmanager_apphost.dev.localhost:15169",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DOTNET_ENVIRONMENT": "Development",
+        "ASPIRE_DASHBOARD_OTLP_ENDPOINT_URL": "https://localhost:21010",
+        "ASPIRE_DASHBOARD_MCP_ENDPOINT_URL": "https://localhost:23175",
+        "ASPIRE_RESOURCE_SERVICE_ENDPOINT_URL": "https://localhost:22144",
+      }
+    },
+    "https - SQL Server Only": {
+      "commandName": "Project",
+      "dotnetRunMessages": true,
+      "launchBrowser": true,
+      "launchUrl": "https://miguelguedelha_umbraco_redirectsmanager_apphost.dev.localhost:17066",
+      "applicationUrl": "https://miguelguedelha_umbraco_redirectsmanager_apphost.dev.localhost:17066;http://miguelguedelha_umbraco_redirectsmanager_apphost.dev.localhost:15169",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "DOTNET_ENVIRONMENT": "Development",
+        "ASPIRE_DASHBOARD_OTLP_ENDPOINT_URL": "https://localhost:21010",
+        "ASPIRE_DASHBOARD_MCP_ENDPOINT_URL": "https://localhost:23175",
+        "ASPIRE_RESOURCE_SERVICE_ENDPOINT_URL": "https://localhost:22144",
+        "USE_SQL_SERVER": "true",
+        "SQL_ONLY": "true"
       }
     }
   }

@@ -5,6 +5,9 @@
   </Folder>
   <Folder Name="/003 src/">
     <Project Path="MiguelGuedelha.Umbraco.RedirectsManager.Client\MiguelGuedelha.Umbraco.RedirectsManager.Client.esproj" />
+    <Project Path="MiguelGuedelha.Umbraco.RedirectsManager.Persistence.EFCore/MiguelGuedelha.Umbraco.RedirectsManager.Persistence.EFCore.csproj" />
+    <Project Path="MiguelGuedelha.Umbraco.RedirectsManager.Persistence.Sqlite\MiguelGuedelha.Umbraco.RedirectsManager.Persistence.Sqlite.csproj" />
+    <Project Path="MiguelGuedelha.Umbraco.RedirectsManager.Persistence.SqlServer\MiguelGuedelha.Umbraco.RedirectsManager.Persistence.SqlServer.csproj" />
     <Project Path="MiguelGuedelha.Umbraco.RedirectsManager/MiguelGuedelha.Umbraco.RedirectsManager.csproj" />
   </Folder>
   <Folder Name="/004 test/">

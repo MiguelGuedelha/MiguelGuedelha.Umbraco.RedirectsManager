@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using MiguelGuedelha.Umbraco.RedirectsManager.Common.Persistence.Models;
+using MiguelGuedelha.Umbraco.RedirectsManager.Persistence.EFCore.Models;
 
-namespace MiguelGuedelha.Umbraco.RedirectsManager.Common.Persistence;
+namespace MiguelGuedelha.Umbraco.RedirectsManager.Persistence.EFCore;
 
 internal sealed class RedirectsManagerDbContext : DbContext
 {

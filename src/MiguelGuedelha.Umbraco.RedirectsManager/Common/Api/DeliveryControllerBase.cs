@@ -8,5 +8,4 @@ namespace MiguelGuedelha.Umbraco.RedirectsManager.Common.Api;
 [Route($"{Constants.Api.ApiName}/api/v{{version:apiVersion}}")]
 [MapToApi(Constants.Api.ApiName)]
 [ApiExplorerSettings(GroupName = Constants.Api.Groups.Delivery)]
-public abstract class RedirectsManagerDeliveryControllerBase : ControllerBase, IUmbracoFeature;
-//TODO: Ensure that any controllers inheriting this only work/are enabled when the Delivery API is also enabled
+public abstract class DeliveryControllerBase : ControllerBase, IUmbracoFeature;

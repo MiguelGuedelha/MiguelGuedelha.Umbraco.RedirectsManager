@@ -15,7 +15,7 @@ internal static class ApiConfiguration
 {
     extension(IUmbracoBuilder builder)
     {
-        public IUmbracoBuilder AddRedirectsManagerOpenApi()
+        public IUmbracoBuilder AddApiCommonModule()
         {
             builder.Services.AddSingleton<IOperationIdHandler, CustomOperationHandler>();
 

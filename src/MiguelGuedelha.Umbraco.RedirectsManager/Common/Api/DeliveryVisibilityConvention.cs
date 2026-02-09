@@ -3,20 +3,20 @@ using Microsoft.Extensions.Configuration;
 
 namespace MiguelGuedelha.Umbraco.RedirectsManager.Common.Api;
 
-public class RedirectsManagerDeliveryVisibilityConvention : IControllerModelConvention
+internal sealed class DeliveryVisibilityConvention : IControllerModelConvention
 {
     private readonly bool _deliveryApiEnabled;
 
     private const string DeliveryApiEnabledProperty = $"{(global::Umbraco.Cms.Core.Constants.Configuration.ConfigDeliveryApi)}:Enabled";
 
-    public RedirectsManagerDeliveryVisibilityConvention(IConfiguration configuration)
+    public DeliveryVisibilityConvention(IConfiguration configuration)
     {
         _deliveryApiEnabled = configuration.GetValue<bool>(DeliveryApiEnabledProperty);
     }
 
     public void Apply(ControllerModel controller)
     {
-        if (!typeof(RedirectsManagerDeliveryControllerBase).IsAssignableFrom(controller.ControllerType))
+        if (!typeof(DeliveryControllerBase).IsAssignableFrom(controller.ControllerType))
         {
             return;
         }

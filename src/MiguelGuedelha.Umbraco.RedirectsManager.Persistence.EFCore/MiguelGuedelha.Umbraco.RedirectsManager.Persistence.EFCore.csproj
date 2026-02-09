@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore" Version="10.0.2" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="10.0.2" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <!-- 
+            Want to make the internal stuff like DbContext still visible to our assemblies,
+            while still making it invisible to package users
+            
+            A bit of a hack, but due to the multiple DB providers needind separate assemblies,
+            this is the only way I can think of making everything tidy and hidden way while still
+            allowing to use the DbContext, etc in the main assemblies
+        -->
+        <InternalsVisibleTo Include="MiguelGuedelha.Umbraco.RedirectsManager" />
+        <InternalsVisibleTo Include="MiguelGuedelha.Umbraco.RedirectsManager.Persistence.Sqlite" />
+        <InternalsVisibleTo Include="MiguelGuedelha.Umbraco.RedirectsManager.Persistence.SqlServer" />
+    </ItemGroup>
+
+</Project>

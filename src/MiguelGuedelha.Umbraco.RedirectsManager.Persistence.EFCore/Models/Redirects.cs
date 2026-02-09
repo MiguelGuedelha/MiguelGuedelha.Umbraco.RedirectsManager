@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace MiguelGuedelha.Umbraco.RedirectsManager.Common.Persistence.Models;
+namespace MiguelGuedelha.Umbraco.RedirectsManager.Persistence.EFCore.Models;
 
 [EntityTypeConfiguration(typeof(RedirectsTypeConfiguration))]
 internal sealed class Redirects
@@ -30,7 +30,7 @@ internal sealed class RedirectsTypeConfiguration : IEntityTypeConfiguration<Redi
     
     public void Configure(EntityTypeBuilder<Redirects> entity)
     {
-        entity.ToTable(Constants.Persistence.TableName, t =>
+        entity.ToTable(Constants.TableName, t =>
         {
             t.HasCheckConstraint("CK_OneDestinationSet", OnlyOneDestinationSetCheck);
         });
