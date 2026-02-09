@@ -1,43 +1,26 @@
-using MiguelGuedelha.Umbraco.RedirectsManager.Common.Persistence.Migrations;
-using Umbraco.Cms.Core;
+using Microsoft.EntityFrameworkCore;
 using Umbraco.Cms.Core.Events;
-using Umbraco.Cms.Core.Migrations;
 using Umbraco.Cms.Core.Notifications;
-using Umbraco.Cms.Core.Scoping;
-using Umbraco.Cms.Core.Services;
-using Umbraco.Cms.Infrastructure.Migrations;
 
 namespace MiguelGuedelha.Umbraco.RedirectsManager.Common.Persistence;
 
-public sealed class MigrationRunner : INotificationHandler<UmbracoApplicationStartingNotification>
+internal sealed class MigrationRunner : INotificationAsyncHandler<UmbracoApplicationStartingNotification>
 {
-    private readonly IMigrationPlanExecutor _migrationPlanExecutor;
-    private readonly ICoreScopeProvider _coreScopeProvider;
-    private readonly IKeyValueService _keyValueService;
-    private readonly IRuntimeState _runtimeState;
+    private readonly RedirectsManagerDbContext _redirectsDbContext;
 
-    public MigrationRunner(
-        IMigrationPlanExecutor migrationPlanExecutor, 
-        ICoreScopeProvider coreScopeProvider, 
-        IKeyValueService keyValueService, 
-        IRuntimeState runtimeState)
+    public MigrationRunner(RedirectsManagerDbContext redirectsDbContext)
     {
-        _migrationPlanExecutor = migrationPlanExecutor;
-        _coreScopeProvider = coreScopeProvider;
-        _keyValueService = keyValueService;
-        _runtimeState = runtimeState;
+        _redirectsDbContext = redirectsDbContext;
     }
 
-    public void Handle(UmbracoApplicationStartingNotification notification)
+    public async Task HandleAsync(UmbracoApplicationStartingNotification notification, CancellationToken cancellationToken)
     {
-        if (_runtimeState.Level < RuntimeLevel.Run)
+        var pendingMigrations = await _redirectsDbContext.Database
+            .GetPendingMigrationsAsync(cancellationToken: cancellationToken);
+
+        if (pendingMigrations.Any())
         {
-            return;
+            await _redirectsDbContext.Database.MigrateAsync(cancellationToken: cancellationToken);
         }
-
-        var migrationPlan = new MigrationPlan(Constants.Manifest.Id);
-
-        migrationPlan.From(string.Empty)
-            .To<AddRedirectsTable>("create-db-table");
     }
 }
