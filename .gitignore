@@ -511,4 +511,6 @@ umbraco-package-schema.json
 
 # Project related
 src/MiguelGuedelha.Umbraco.RedirectsManager/wwwroot/App_Plugins/MiguelGuedelhaUmbracoRedirectsManager
-obj\\Debug/
+**/obj\\Debug/
+**/bin\\Debug/
+**/local-data/
