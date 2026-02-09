@@ -6,6 +6,7 @@ var sqlServerOnly = bool.Parse(Environment.GetEnvironmentVariable("SQL_ONLY") ??
 const string baseBindPath = "../../local-data/v17/";
 
 IResourceBuilder<SqlServerServerResource>? sqlServer = null;
+IResourceBuilder<SqlServerDatabaseResource>? umbracoDb = null;
 
 if (useSqlServer)
 {
@@ -19,6 +20,7 @@ if (useSqlServer)
         .WithUrlForEndpoint("tcp", x => { x.DisplayLocation = UrlDisplayLocation.DetailsOnly; })
         .WithPassword(sqlPasswordParam);
     
+    umbracoDb = sqlServer.AddDatabase("umbraco-db", "umbraco-cms");
 }
 
 if (sqlServerOnly && sqlServer is not null)
@@ -38,10 +40,8 @@ var testSite = builder.AddProject(
         projectPath: "../MiguelGuedelha.Umbraco.RedirectsManager.TestSite/MiguelGuedelha.Umbraco.RedirectsManager.TestSite.csproj")
     .WaitFor(dashboardClient);
 
-if (useSqlServer && sqlServer is not null)
+if (useSqlServer && sqlServer is not null && umbracoDb is not null)
 {
-    var umbracoDb = sqlServer.AddDatabase("umbraco-db", "umbraco-cms");
-
     testSite
         .WithReference(umbracoDb, connectionName: "umbracoDbDSN")
         .WithEnvironment("ConnectionStrings__umbracoDbDSN_ProviderName", "Microsoft.Data.SqlClient")
