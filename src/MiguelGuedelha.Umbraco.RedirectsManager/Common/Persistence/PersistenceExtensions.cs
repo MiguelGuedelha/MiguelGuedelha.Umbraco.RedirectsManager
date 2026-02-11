@@ -10,8 +10,10 @@ internal static class PersistenceExtensions
     {
         public void UseRedirectsManagerDbProvider(string? connectionString, string? providerName)
         {
-            ArgumentException.ThrowIfNullOrWhiteSpace(connectionString);
-            ArgumentException.ThrowIfNullOrWhiteSpace(providerName);
+            if (string.IsNullOrWhiteSpace(connectionString) || string.IsNullOrWhiteSpace(providerName))
+            {
+                return;
+            }
             
             switch (providerName)
             {

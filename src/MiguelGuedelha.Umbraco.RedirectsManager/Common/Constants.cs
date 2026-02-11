@@ -17,10 +17,14 @@ internal static class Constants
             .GetCustomAttribute<AssemblyInformationalVersionAttribute>()
             ?.InformationalVersion;
 
+        private static readonly string? FileVersion = Assembly
+            .GetCustomAttribute<AssemblyFileVersionAttribute>()
+            ?.Version;
+
         private static readonly string? NameVersion = Assembly
             .GetName().Version?.ToString();
 
-        public static readonly string Version = InformationalVersion ?? NameVersion ?? "0.0.0";
+        public static readonly string Version = InformationalVersion ?? FileVersion ?? NameVersion ?? "0.0.0";
     }
     
     internal static class Api

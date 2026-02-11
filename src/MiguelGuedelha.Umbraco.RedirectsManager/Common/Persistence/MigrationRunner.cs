@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using MiguelGuedelha.Umbraco.RedirectsManager.Persistence.EFCore;
+using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 
@@ -16,6 +17,11 @@ internal sealed class MigrationRunner : INotificationAsyncHandler<UmbracoApplica
 
     public async Task HandleAsync(UmbracoApplicationStartingNotification notification, CancellationToken cancellationToken)
     {
+        if (notification.RuntimeLevel < RuntimeLevel.Run)
+        {
+            return;
+        }
+        
         var pendingMigrations = await _redirectsDbContext.Database
             .GetPendingMigrationsAsync(cancellationToken: cancellationToken);
 

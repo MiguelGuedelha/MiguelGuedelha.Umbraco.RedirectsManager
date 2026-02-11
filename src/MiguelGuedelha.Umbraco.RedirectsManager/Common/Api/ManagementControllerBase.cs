@@ -7,7 +7,7 @@ using Umbraco.Cms.Web.Common.Routing;
 namespace MiguelGuedelha.Umbraco.RedirectsManager.Common.Api;
 
 [ApiController]
-[BackOfficeRoute($"{Constants.Api.ApiName}/api/v{{version:apiVersion}}")]
+[BackOfficeRoute($"{Constants.Api.ApiName}/api/management/v{{version:apiVersion}}")]
 [Authorize(Policy = AuthorizationPolicies.SectionAccessContent)]
 [MapToApi(Constants.Api.ApiName)]
 [ApiExplorerSettings(GroupName = Constants.Api.Groups.Management)]
