@@ -2,7 +2,7 @@ using MiguelGuedelha.Umbraco.RedirectsManager.Common;
 using Umbraco.Cms.Core.Manifest;
 using Umbraco.Cms.Infrastructure.Manifest;
 
-namespace MiguelGuedelha.Umbraco.RedirectsManager.Features.Manifests;
+namespace MiguelGuedelha.Umbraco.RedirectsManager.Manifests;
 
 internal sealed class PackageManifestReader : IPackageManifestReader
 {

@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using MiguelGuedelha.Umbraco.RedirectsManager.Common;
 using MiguelGuedelha.Umbraco.RedirectsManager.Common.Api;
 
-namespace MiguelGuedelha.Umbraco.RedirectsManager.Features.Management;
+namespace MiguelGuedelha.Umbraco.RedirectsManager.Management;
 
 [ApiVersion(Constants.Api.Versions.V1)]
 public sealed class GetTestManagementController : ManagementControllerBase
