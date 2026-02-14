@@ -23,4 +23,8 @@
     <ProjectReference Include="..\MiguelGuedelha.Umbraco.RedirectsManager.Persistence.SqlServer\MiguelGuedelha.Umbraco.RedirectsManager.Persistence.SqlServer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Api\Endpoints\" />
+  </ItemGroup>
+
 </Project>

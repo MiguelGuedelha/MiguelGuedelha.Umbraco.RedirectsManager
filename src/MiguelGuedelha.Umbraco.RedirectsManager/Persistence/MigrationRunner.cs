@@ -4,7 +4,7 @@ using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Notifications;
 
-namespace MiguelGuedelha.Umbraco.RedirectsManager.Common.Persistence;
+namespace MiguelGuedelha.Umbraco.RedirectsManager.Persistence;
 
 internal sealed class MigrationRunner : INotificationAsyncHandler<UmbracoApplicationStartingNotification>
 {

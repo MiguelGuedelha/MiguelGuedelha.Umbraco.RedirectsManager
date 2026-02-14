@@ -4,7 +4,7 @@ using Umbraco.Cms.Api.Common.Attributes;
 using Umbraco.Cms.Web.Common.Authorization;
 using Umbraco.Cms.Web.Common.Routing;
 
-namespace MiguelGuedelha.Umbraco.RedirectsManager.Common.Api;
+namespace MiguelGuedelha.Umbraco.RedirectsManager.Api;
 
 [ApiController]
 [BackOfficeRoute($"{Constants.Api.ApiName}/api/management/v{{version:apiVersion}}")]

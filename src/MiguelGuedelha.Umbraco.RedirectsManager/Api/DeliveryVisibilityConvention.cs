@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Mvc.ApplicationModels;
 using Microsoft.Extensions.Configuration;
 
-namespace MiguelGuedelha.Umbraco.RedirectsManager.Common.Api;
+namespace MiguelGuedelha.Umbraco.RedirectsManager.Api;
 
 internal sealed class DeliveryVisibilityConvention : IControllerModelConvention
 {

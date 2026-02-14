@@ -1,10 +1,8 @@
 using Asp.Versioning;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MiguelGuedelha.Umbraco.RedirectsManager.Common;
-using MiguelGuedelha.Umbraco.RedirectsManager.Common.Api;
 
-namespace MiguelGuedelha.Umbraco.RedirectsManager.Management;
+namespace MiguelGuedelha.Umbraco.RedirectsManager.Api.Endpoints.Management;
 
 [ApiVersion(Constants.Api.Versions.V1)]
 public sealed class GetTestManagementController : ManagementControllerBase

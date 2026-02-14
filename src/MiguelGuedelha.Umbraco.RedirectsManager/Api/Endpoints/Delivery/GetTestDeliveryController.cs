@@ -1,10 +1,8 @@
 using Asp.Versioning;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MiguelGuedelha.Umbraco.RedirectsManager.Common;
-using MiguelGuedelha.Umbraco.RedirectsManager.Common.Api;
 
-namespace MiguelGuedelha.Umbraco.RedirectsManager.Delivery;
+namespace MiguelGuedelha.Umbraco.RedirectsManager.Api.Endpoints.Delivery;
 
 [ApiVersion(Constants.Api.Versions.V1)]
 public sealed class GetTestDeliveryController : DeliveryControllerBase

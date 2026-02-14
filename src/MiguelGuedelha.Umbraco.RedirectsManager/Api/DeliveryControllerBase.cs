@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Umbraco.Cms.Api.Common.Attributes;
 using Umbraco.Cms.Core.Features;
 
-namespace MiguelGuedelha.Umbraco.RedirectsManager.Common.Api;
+namespace MiguelGuedelha.Umbraco.RedirectsManager.Api;
 
 [ApiController]
 [Route($"{Constants.Api.ApiName}/api/delivery/v{{version:apiVersion}}")]

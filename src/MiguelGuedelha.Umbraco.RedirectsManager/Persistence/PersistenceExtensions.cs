@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using MiguelGuedelha.Umbraco.RedirectsManager.Persistence.Sqlite;
 using MiguelGuedelha.Umbraco.RedirectsManager.Persistence.SqlServer;
 
-namespace MiguelGuedelha.Umbraco.RedirectsManager.Common.Persistence;
+namespace MiguelGuedelha.Umbraco.RedirectsManager.Persistence;
 
 internal static class PersistenceExtensions
 {

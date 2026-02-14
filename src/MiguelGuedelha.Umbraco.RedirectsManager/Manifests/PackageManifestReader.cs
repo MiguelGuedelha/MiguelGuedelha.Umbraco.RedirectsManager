@@ -1,4 +1,3 @@
-using MiguelGuedelha.Umbraco.RedirectsManager.Common;
 using Umbraco.Cms.Core.Manifest;
 using Umbraco.Cms.Infrastructure.Manifest;
 

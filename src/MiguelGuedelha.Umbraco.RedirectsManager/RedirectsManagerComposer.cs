@@ -1,7 +1,7 @@
 using Microsoft.Extensions.DependencyInjection;
-using MiguelGuedelha.Umbraco.RedirectsManager.Common.Api;
-using MiguelGuedelha.Umbraco.RedirectsManager.Common.Persistence;
+using MiguelGuedelha.Umbraco.RedirectsManager.Api;
 using MiguelGuedelha.Umbraco.RedirectsManager.Manifests;
+using MiguelGuedelha.Umbraco.RedirectsManager.Persistence;
 using MiguelGuedelha.Umbraco.RedirectsManager.Persistence.EFCore;
 using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;

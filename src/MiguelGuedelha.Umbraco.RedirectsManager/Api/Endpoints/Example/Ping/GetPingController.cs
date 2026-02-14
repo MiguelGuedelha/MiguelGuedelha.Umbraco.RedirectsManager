@@ -1,10 +1,8 @@
 using Asp.Versioning;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using MiguelGuedelha.Umbraco.RedirectsManager.Common;
-using MiguelGuedelha.Umbraco.RedirectsManager.Common.Api;
 
-namespace MiguelGuedelha.Umbraco.RedirectsManager.Example.Ping;
+namespace MiguelGuedelha.Umbraco.RedirectsManager.Api.Endpoints.Example.Ping;
 
 [ApiVersion(Constants.Api.Versions.V1)]
 [ApiExplorerSettings(GroupName = Constants.Api.Groups.Example)]

@@ -9,7 +9,7 @@ using Umbraco.Cms.Api.Common.OpenApi;
 using Umbraco.Cms.Api.Management.OpenApi;
 using Umbraco.Cms.Core.DependencyInjection;
 
-namespace MiguelGuedelha.Umbraco.RedirectsManager.Common.Api;
+namespace MiguelGuedelha.Umbraco.RedirectsManager.Api;
 
 internal static class ApiConfiguration
 {
@@ -51,7 +51,7 @@ internal static class ApiConfiguration
         }
     }
     
-    public class RedirectsManagerOperationSecurityFilter : BackOfficeSecurityRequirementsOperationFilterBase
+    private sealed class RedirectsManagerOperationSecurityFilter : BackOfficeSecurityRequirementsOperationFilterBase
     {
         protected override string ApiName => Constants.Api.ApiName;
     }
@@ -59,7 +59,7 @@ internal static class ApiConfiguration
     // This is used to generate nice operation IDs in our swagger json file
     // So that the gnerated TypeScript client has nice method names and not too verbose
     // https://docs.umbraco.com/umbraco-cms/tutorials/creating-a-backoffice-api/umbraco-schema-and-operation-ids#operation-ids
-    public class CustomOperationHandler : OperationIdHandler
+    public sealed class CustomOperationHandler : OperationIdHandler
     {
         public CustomOperationHandler(IOptions<ApiVersioningOptions> apiVersioningOptions) : base(apiVersioningOptions)
         {

@@ -1,6 +1,6 @@
 using System.Reflection;
 
-namespace MiguelGuedelha.Umbraco.RedirectsManager.Common;
+namespace MiguelGuedelha.Umbraco.RedirectsManager;
 
 internal static class Constants
 {
