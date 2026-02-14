@@ -5,10 +5,10 @@
     </ItemGroup>
 
     <ItemGroup>
-        <!-- 
+        <!--
             Want to make the internal stuff like DbContext still visible to our assemblies,
             while still making it invisible to package users
-            
+
             A bit of a hack, but due to the multiple DB providers needind separate assemblies,
             this is the only way I can think of making everything tidy and hidden way while still
             allowing to use the DbContext, etc in the main assemblies
