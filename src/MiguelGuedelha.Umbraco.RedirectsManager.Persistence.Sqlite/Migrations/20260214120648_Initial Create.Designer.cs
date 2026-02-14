@@ -11,14 +11,14 @@ using MiguelGuedelha.Umbraco.RedirectsManager.Persistence.EFCore;
 namespace MiguelGuedelha.Umbraco.RedirectsManager.Persistence.Sqlite.Migrations
 {
     [DbContext(typeof(RedirectsManagerDbContext))]
-    [Migration("20260209183719_InitialCreate")]
+    [Migration("20260214120648_Initial Create")]
     partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
-            modelBuilder.HasAnnotation("ProductVersion", "10.0.2");
+            modelBuilder.HasAnnotation("ProductVersion", "10.0.3");
 
             modelBuilder.Entity("MiguelGuedelha.Umbraco.RedirectsManager.Persistence.EFCore.Models.Redirects", b =>
                 {
@@ -32,21 +32,32 @@ namespace MiguelGuedelha.Umbraco.RedirectsManager.Persistence.Sqlite.Migrations
                         .HasColumnName("createdAt");
 
                     b.Property<string>("Culture")
+                        .HasMaxLength(100)
                         .HasColumnType("TEXT")
                         .HasColumnName("culture");
 
-                    b.Property<Guid?>("DestinationId")
-                        .HasColumnType("TEXT")
+                    b.Property<int?>("DestinationId")
+                        .HasColumnType("INTEGER")
                         .HasColumnName("destinationId");
+
+                    b.Property<Guid?>("DestinationKey")
+                        .HasColumnType("TEXT")
+                        .HasColumnName("destinationKey");
 
                     b.Property<string>("DestinationType")
                         .IsRequired()
+                        .HasMaxLength(8)
                         .HasColumnType("TEXT")
                         .HasColumnName("destinationType");
 
                     b.Property<string>("DestinationUrl")
+                        .HasMaxLength(2048)
                         .HasColumnType("TEXT")
                         .HasColumnName("destinationUrl");
+
+                    b.Property<bool>("ForwardQuery")
+                        .HasColumnType("INTEGER")
+                        .HasColumnName("forwardQuery");
 
                     b.Property<bool>("IsPermanent")
                         .HasColumnType("INTEGER")
@@ -58,12 +69,26 @@ namespace MiguelGuedelha.Umbraco.RedirectsManager.Persistence.Sqlite.Migrations
 
                     b.Property<string>("OriginUrl")
                         .IsRequired()
+                        .HasMaxLength(2048)
                         .HasColumnType("TEXT")
                         .HasColumnName("originUrl");
 
-                    b.Property<Guid?>("SiteId")
+                    b.Property<string>("Query")
+                        .HasMaxLength(2048)
                         .HasColumnType("TEXT")
+                        .HasColumnName("query");
+
+                    b.Property<int>("SiteId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER")
+                        .HasDefaultValue(-1)
                         .HasColumnName("siteId");
+
+                    b.Property<Guid>("SiteKey")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT")
+                        .HasDefaultValue(new Guid("00000000-0000-0000-0000-000000000000"))
+                        .HasColumnName("siteKey");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("TEXT")
@@ -71,9 +96,16 @@ namespace MiguelGuedelha.Umbraco.RedirectsManager.Persistence.Sqlite.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("RedirectsManager", null, t =>
+                    b.HasIndex("DestinationId");
+
+                    b.HasIndex("SiteId", "OriginUrl")
+                        .IsUnique();
+
+                    b.ToTable("redirectsManager", null, t =>
                         {
-                            t.HasCheckConstraint("CK_OneDestinationSet", "(destinationId IS NOT NULL AND (destinationUrl IS NULL OR destinationUrl = '')) \nOR \n(destinationId IS NULL AND (destinationUrl IS NOT NULL AND destinationUrl <> ''))");
+                            t.HasCheckConstraint("CK_GlobalOrScopedSiteSet", "(\r\n    siteId = -1 \r\n    AND\r\n    siteKey = '00000000-0000-0000-0000-000000000000'\r\n)\r\nOR\r\n(\r\n    siteId > -1 \r\n    AND \r\n    siteKey <> '00000000-0000-0000-0000-000000000000'\r\n)");
+
+                            t.HasCheckConstraint("CK_OneDestinationSet", "(\r\n    destinationId IS NOT NULL \r\n    AND \r\n    (\r\n        destinationUrl IS NULL \r\n        OR \r\n        destinationUrl = ''\r\n    )\r\n) \r\nOR \r\n(\r\n    destinationId IS NULL \r\n    AND \r\n    (\r\n        destinationUrl IS NOT NULL \r\n        AND \r\n        destinationUrl <> ''\r\n    )\r\n)");
                         });
                 });
 #pragma warning restore 612, 618

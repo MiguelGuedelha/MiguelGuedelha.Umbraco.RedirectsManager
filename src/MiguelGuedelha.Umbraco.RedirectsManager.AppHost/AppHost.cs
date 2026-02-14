@@ -3,7 +3,7 @@ var builder = DistributedApplication.CreateBuilder(args);
 var useSqlServer = bool.Parse(Environment.GetEnvironmentVariable("USE_SQL_SERVER") ?? "false");
 var sqlServerOnly = bool.Parse(Environment.GetEnvironmentVariable("SQL_ONLY") ?? "false");
 
-const string baseBindPath = "../../local-data/v17/";
+const string baseBindPath = "/../local-data/v17/";
 
 IResourceBuilder<SqlServerServerResource>? sqlServer = null;
 IResourceBuilder<SqlServerDatabaseResource>? umbracoDb = null;

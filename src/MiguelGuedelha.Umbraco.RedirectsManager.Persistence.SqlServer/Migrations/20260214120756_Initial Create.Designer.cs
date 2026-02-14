@@ -12,7 +12,7 @@ using MiguelGuedelha.Umbraco.RedirectsManager.Persistence.EFCore;
 namespace MiguelGuedelha.Umbraco.RedirectsManager.Persistence.SqlServer.Migrations
 {
     [DbContext(typeof(RedirectsManagerDbContext))]
-    [Migration("20260209183835_InitialCreate")]
+    [Migration("20260214120756_Initial Create")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace MiguelGuedelha.Umbraco.RedirectsManager.Persistence.SqlServer.Migratio
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "10.0.2")
+                .HasAnnotation("ProductVersion", "10.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -39,21 +39,32 @@ namespace MiguelGuedelha.Umbraco.RedirectsManager.Persistence.SqlServer.Migratio
                         .HasColumnName("createdAt");
 
                     b.Property<string>("Culture")
-                        .HasColumnType("nvarchar(max)")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
                         .HasColumnName("culture");
 
-                    b.Property<Guid?>("DestinationId")
-                        .HasColumnType("uniqueidentifier")
+                    b.Property<int?>("DestinationId")
+                        .HasColumnType("int")
                         .HasColumnName("destinationId");
+
+                    b.Property<Guid?>("DestinationKey")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("destinationKey");
 
                     b.Property<string>("DestinationType")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasMaxLength(8)
+                        .HasColumnType("nvarchar(8)")
                         .HasColumnName("destinationType");
 
                     b.Property<string>("DestinationUrl")
-                        .HasColumnType("nvarchar(max)")
+                        .HasMaxLength(2048)
+                        .HasColumnType("nvarchar(2048)")
                         .HasColumnName("destinationUrl");
+
+                    b.Property<bool>("ForwardQuery")
+                        .HasColumnType("bit")
+                        .HasColumnName("forwardQuery");
 
                     b.Property<bool>("IsPermanent")
                         .HasColumnType("bit")
@@ -65,12 +76,26 @@ namespace MiguelGuedelha.Umbraco.RedirectsManager.Persistence.SqlServer.Migratio
 
                     b.Property<string>("OriginUrl")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasMaxLength(2048)
+                        .HasColumnType("nvarchar(2048)")
                         .HasColumnName("originUrl");
 
-                    b.Property<Guid?>("SiteId")
-                        .HasColumnType("uniqueidentifier")
+                    b.Property<string>("Query")
+                        .HasMaxLength(2048)
+                        .HasColumnType("nvarchar(2048)")
+                        .HasColumnName("query");
+
+                    b.Property<int>("SiteId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(-1)
                         .HasColumnName("siteId");
+
+                    b.Property<Guid>("SiteKey")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier")
+                        .HasDefaultValue(new Guid("00000000-0000-0000-0000-000000000000"))
+                        .HasColumnName("siteKey");
 
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2")
@@ -78,9 +103,16 @@ namespace MiguelGuedelha.Umbraco.RedirectsManager.Persistence.SqlServer.Migratio
 
                     b.HasKey("Id");
 
-                    b.ToTable("RedirectsManager", null, t =>
+                    b.HasIndex("DestinationId");
+
+                    b.HasIndex("SiteId", "OriginUrl")
+                        .IsUnique();
+
+                    b.ToTable("redirectsManager", null, t =>
                         {
-                            t.HasCheckConstraint("CK_OneDestinationSet", "(destinationId IS NOT NULL AND (destinationUrl IS NULL OR destinationUrl = '')) \nOR \n(destinationId IS NULL AND (destinationUrl IS NOT NULL AND destinationUrl <> ''))");
+                            t.HasCheckConstraint("CK_GlobalOrScopedSiteSet", "(\r\n    siteId = -1 \r\n    AND\r\n    siteKey = '00000000-0000-0000-0000-000000000000'\r\n)\r\nOR\r\n(\r\n    siteId > -1 \r\n    AND \r\n    siteKey <> '00000000-0000-0000-0000-000000000000'\r\n)");
+
+                            t.HasCheckConstraint("CK_OneDestinationSet", "(\r\n    destinationId IS NOT NULL \r\n    AND \r\n    (\r\n        destinationUrl IS NULL \r\n        OR \r\n        destinationUrl = ''\r\n    )\r\n) \r\nOR \r\n(\r\n    destinationId IS NULL \r\n    AND \r\n    (\r\n        destinationUrl IS NOT NULL \r\n        AND \r\n        destinationUrl <> ''\r\n    )\r\n)");
                         });
                 });
 #pragma warning restore 612, 618
