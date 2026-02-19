@@ -4,13 +4,13 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageVersion Include="Microsoft.ICU.ICU4C.Runtime" Version="72.1.0.3" />
-    <PackageVersion Include="Umbraco.Cms" Version="17.1.0" />
-    <PackageVersion Include="Umbraco.Cms.DevelopmentMode.Backoffice" Version="17.1.0" />
-    <PackageVersion Include="Umbraco.Cms.Persistence.EFCore" Version="17.1.0" />
-    <PackageVersion Include="Umbraco.Cms.Web.Website" Version="17.1.0" />
-    <PackageVersion Include="Umbraco.Cms.Web.Common" Version="17.1.0" />
-    <PackageVersion Include="Umbraco.Cms.Api.Common" Version="17.1.0" />
-    <PackageVersion Include="Umbraco.Cms.Api.Management" Version="17.1.0" />
+    <PackageVersion Include="Umbraco.Cms" Version="17.2.0" />
+    <PackageVersion Include="Umbraco.Cms.DevelopmentMode.Backoffice" Version="17.2.0" />
+    <PackageVersion Include="Umbraco.Cms.Persistence.EFCore" Version="17.2.0" />
+    <PackageVersion Include="Umbraco.Cms.Web.Website" Version="17.2.0" />
+    <PackageVersion Include="Umbraco.Cms.Web.Common" Version="17.2.0" />
+    <PackageVersion Include="Umbraco.Cms.Api.Common" Version="17.2.0" />
+    <PackageVersion Include="Umbraco.Cms.Api.Management" Version="17.2.0" />
     <PackageVersion Include="uSync" Version="17.0.2" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.3" />
     <PackageVersion Include="Microsoft.EntityFrameworkCore.Sqlite" Version="10.0.3" />
